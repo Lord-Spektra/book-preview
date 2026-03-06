@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текст книги</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chapter {
+            margin-bottom: 1rem;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .chapter-title {
+            background: #1e1e1e;
+            padding: 1rem;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            border-left: 4px solid #8b0000;
+            transition: background 0.2s;
+        }
+        .chapter-title:hover {
+            background: #2a2a2a;
+        }
+        .chapter-content {
+            max-height: 0;
+            padding: 0 1rem;
+            background: #1a1a1a;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.2s;
+            white-space: pre-wrap;
+            border-top: 0;
+        }
+        .chapter.open .chapter-content {
+            max-height: 1000px; /* достаточно большое значение */
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>[Название]</h1>
+        <p>Текст первой части</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="text.html">Текст</a></li>
+                <li><a href="gallery.html">Иллюстрации</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 style="font-family: 'Cinzel'; margin-bottom: 1.5rem;">Пролог и главы</h2>
+
+        <div class="chapter">
+            <div class="chapter-title">Пролог. Мир на века</div>
+            <div class="chapter-content">
+                Выжженые земли... (вставьте полный текст пролога)
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-title">Глава 1. Парящий город</div>
+            <div class="chapter-content">
+                Аэриум, парящий город, спустя несколько веков... (текст главы)
+            </div>
+        </div>
+
+        <!-- Добавьте остальные главы по аналогии -->
+
+        <p style="margin-top: 2rem;">📌 <em>Текст предчистовой версии, возможны правки.</em></p>
+    </div>
+
+    <footer>
+        &copy; 2026 · Для первых читателей
+    </footer>
+
+    <script>
+        // Скрипт для аккордеона
+        document.querySelectorAll('.chapter-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const chapter = title.parentElement;
+                chapter.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
