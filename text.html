@@ -33,10 +33,11 @@
             white-space: pre-wrap;
             border-top: 0;
         }
-        .chapter.open .chapter-content {
-            max-height: 1000px; /* достаточно большое значение */
-            padding: 1rem;
-        }
+       .chapter.open .chapter-content {
+    max-height: none; /* убираем ограничение */
+    padding: 1rem;
+    overflow-y: auto; /* если текст больше окна, появится полоса прокрутки */
+}
     </style>
 </head>
 <body>
@@ -289,6 +290,7 @@
     </script>
 </body>
 </html>
+
 
 
 
